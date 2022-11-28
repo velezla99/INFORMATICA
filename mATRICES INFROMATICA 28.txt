@@ -1,0 +1,13 @@
+#Importación de la liobreria Numpy
+import numpy as np
+
+#Definir la matriz A de coeficientes
+A= np.matrix([[1, -5], [2, 1]])
+
+#Definir la matriz B en terminos constantes
+B= np.matrix([[0],[2]])
+
+#Comando para la resolución del SEL
+X = np.linalg.solve(A, B)
+
+print(X)
