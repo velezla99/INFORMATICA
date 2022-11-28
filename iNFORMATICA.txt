@@ -1,0 +1,17 @@
+from numpy.core.function_base import linspace
+import numpy as np
+import scipy.optimize as opt 
+import matplotlib.pyplot as plt
+
+#definir las función (x)
+def funcion(x):
+  y= 150-0.082*293.15*x/(7000-0.0322*x)+1.35*np.power(x,2)/np.power(7000,2)
+  return y
+#definir la variable x
+x=opt.fsolve(funcion,[60000])
+print('x=',x)
+#para la grafica
+x= linspace(0.01,3,100)
+y= 150-0.082*293.15*x/(7000-0.0322*x)-1.35*np.power(x,2)/np.power(7000,2)
+
+plt.plot(x, y)
